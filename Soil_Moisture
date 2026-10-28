@@ -1,0 +1,48 @@
+// Code for soil moisture sensing
+void setup() {
+  pinMode(1,OUTPUT);
+  Serial.begin(9600);
+  int timer =0; // time for pumping miliseconds 
+  int limit =0; // limit of time for pumping in miliseconnds
+  bool ran = false; // condition to check if the pumping happend
+  int timerCheck = 0; // time for ignoring the values in miliseconds
+  int limitAfterCheck = 0;// limit of tim to ignore values in miliseconds
+  
+}
+
+// The loop routine runs over and over again forever
+void loop() {
+  // Read the input on analog pin A0
+  int sensorValue1 = analogRead(A0);
+  int sensorValue2 = analogRead(A1);
+  
+  // Print out the raw value read
+  Serial.println("SensorValue1: ");
+  Serial.println(sensorValue1);
+
+  Serial.println("SensorValue2: ");
+  Serial.println(sensorValue2);
+
+  if timerCheck > limitAfterCheck
+  {
+    ran = false;
+    timerCheck=0;
+  }
+  while (sensorValue > 300 & timer< limit & ran==false) /loop to send signal to pump
+  {
+    digitalWrite(1,HIGH);
+    timer = timer+1;
+    Serial.println("SensorValue1: ");
+    Serial.println(sensorValue1);
+
+    Serial.println("SensorValue2: ");
+    Serial.println(sensorValue2);
+    delay(1000)
+  }
+  digitalWrite(1,LOW); 
+  ran=true;
+  timer=0;
+  timerCheck=timerCheck+1;
+  // Delay in between reads for stability
+  delay(1000);
+}
