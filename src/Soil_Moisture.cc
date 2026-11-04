@@ -1,9 +1,14 @@
+#include<Arduino.h>
+#define PUMP_TIMER_LIMIT 1000 // time in milliseconds until pump shuts off
+#define RELAY_PIN 1 // Output pin used for relay switching
+
+
 // Code for soil moisture sensing
 void setup() {
-  pinMode(1,OUTPUT);
+  pinMode(1,OUTPUT); 
+
   Serial.begin(9600);
-  int timer =0; // time for pumping miliseconds 
-  int limit =0; // limit of time for pumping in miliseconnds
+  int pump_timer = 0; // timer for pumping miliseconds 
   bool ran = false; // condition to check if the pumping happend
   int timerCheck = 0; // time for ignoring the values in miliseconds
   int limitAfterCheck = 0;// limit of tim to ignore values in miliseconds
@@ -12,6 +17,7 @@ void setup() {
 
 // The loop routine runs over and over again forever
 void loop() {
+
   // Read the input on analog pin A0
   int sensorValue1 = analogRead(A0);
   int sensorValue2 = analogRead(A1);
@@ -22,6 +28,7 @@ void loop() {
 
   Serial.println("SensorValue2: ");
   Serial.println(sensorValue2);
+
 
   if timerCheck > limitAfterCheck
   {
