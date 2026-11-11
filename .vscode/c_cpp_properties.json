@@ -1,0 +1,110 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "/home/mint-xfce/Automated_Greenhouse/include",
+                "/home/mint-xfce/Automated_Greenhouse/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino/tinyusb",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino/api/deprecated",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino/api/deprecated-avr-comp",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/variants/UNOWIFIR4",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/AnalogWave",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Arduino_CAN/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Arduino_FreeRTOS/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Arduino_LED_Matrix/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/BlockDevices",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/EEPROM/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/FATFilesystem",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/HID",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/I2S",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/LittleFilesystem",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/OPAMP/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/OTAUpdate/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Preferences/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/RTC/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SDU/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SPI",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SoftwareATSE/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SoftwareSerial/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Storage",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/WDT/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/WiFiS3/src",
+                "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Wire",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/mint-xfce/Automated_Greenhouse/include",
+                    "/home/mint-xfce/Automated_Greenhouse/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino/tinyusb",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino/api/deprecated",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/cores/arduino/api/deprecated-avr-comp",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/variants/UNOWIFIR4",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/AnalogWave",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Arduino_CAN/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Arduino_FreeRTOS/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Arduino_LED_Matrix/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/BlockDevices",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/EEPROM/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/FATFilesystem",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/HID",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/I2S",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/LittleFilesystem",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/OPAMP/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/OTAUpdate/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Preferences/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/RTC/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SDU/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SPI",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SoftwareATSE/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/SoftwareSerial/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Storage",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/WDT/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/WiFiS3/src",
+                    "/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/libraries/Wire",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60200",
+                "ARDUINO_UNOWIFIR4",
+                "ARDUINO_ARCH_RENESAS_UNO",
+                "ARDUINO_UNOR4_WIFI",
+                "NO_USB",
+                "BACKTRACE_SUPPORT",
+                "LWIP_DNS=1",
+                "CFG_TUSB_MCU=OPT_MCU_RAXXX",
+                "_RA_CORE=CM4",
+                "_RENESAS_RA_",
+                "ARDUINO=10810",
+                "ARDUINO_ARCH_RENESAS",
+                "ARDUINO_FSP",
+                "_XOPEN_SOURCE=700",
+                "F_CPU=48000000L",
+                ""
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++17",
+            "compilerPath": "/home/mint-xfce/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc",
+            "compilerArgs": [
+                "-mcpu=cortex-m4",
+                "-mfloat-abi=hard",
+                "-mfpu=fpv4-sp-d16",
+                "-mthumb",
+                "-iprefix/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno",
+                "@/home/mint-xfce/.platformio/packages/framework-arduinorenesas-uno/variants/UNOWIFIR4/includes.txt",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
