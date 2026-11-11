@@ -14,7 +14,6 @@ void Pump_Water();
 
 void setup() 
 {
-
   pinMode(RELAY_PIN, OUTPUT);   // Set pin as output 
   Serial.begin(9600);           // Initialize serial communication between computer and Arduino
 }
@@ -56,8 +55,6 @@ void Check_Soil_Moisture(int* valueSensor1, int* valueSensor2, int* average_mois
     Serial.println(*valueSensor1);
     Serial.println("valueSensor2: ");
     Serial.println(*valueSensor2);
-
-    
 };
 
 void Pump_Water()
