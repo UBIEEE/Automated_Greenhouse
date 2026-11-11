@@ -1,49 +1,27 @@
 #include<Arduino.h>
 #include<stdbool.h>
 
-#define PUMP_TIME_LIMIT 1000    // time in milliseconds until pump shuts off
-#define SOIL_SATURATION_TIME 2000 // time to allow water to travel through soil
+/******************************Constants***************************************************/
 
-#define RELAY_PIN 1             // Output pin used for relay switching
+const int PUMP_TIME_LIMIT = 1000; // time in milliseconds until pump shuts off
+const int SOIL_SATURATION_TIME = 2000; // time in milliseconds to let water run through soil
 
-#define DRY_THRESHOLD 50        // Dryness level to trigger initial watering
-#define WET_THRESHOLD 300       // Wetness level to stop watering
+const int DRY_THRESHOLD = 50; // sensor threshold to start watering soil
+const int WET_THRESHOLD = 300;// sensor threshold to stop watering
 
-void Check_Soil_Moisture(int* valueSensor1, int* valueSensor2);
-void Pump_Water();
+const int PUMP_RELAY_PIN = 1;
 
-void setup() 
-{
-  pinMode(RELAY_PIN, OUTPUT);   // Set pin as output 
-  Serial.begin(9600);           // Initialize serial communication between computer and Arduino
-}
 
-// The loop routine runs over and over again forever
-void loop() 
-{
-    static double average_moisture = 0;   // Average reading of both sensors 
+/*******************************Variables***************************************************/
 
-    static bool water_soil = false; // Whether watering process should begin
+int valueSensor1 = 0; // analog sensor input from soil moisture sensor
+int valueSensor2 = 0; // analog sensor input from soil moisture sensor
+int average_moisture = 0; // average of the soil moisture sensor readings 
 
-    static int valueSensor1 = 0;        // Analog input from sensor 1
-    static int valueSensor2 = 0;        // Analog input from sensor 2
+bool need_to_water_soil = false; // determines if soil needs to be watered
 
-    Check_Soil_Moisture(&valueSensor1, &valueSensor2, &average_moisture); 
 
-    if (average_moisture < 50) 
-    {
-        water_soil = true;
-        Serial.println("Starting soil watering");
-    }
-
-    while (begin_watering)
-    {
-        Pump_Water(water_soil); // Pump water for one second
-        delay(SOIL_SATURATION_TIME); // Wait for water to travel through soil
-        Check_Soil_Moisture(&valueSensor1, &valueSensor2, &average_moisture); // Check moisture again
-        if (average_moisture < WET_THRESHOLD) begin_watering = false;
-    }
-}
+/*****************************Functions***************************************************/
 
 void Check_Soil_Moisture(int* valueSensor1, int* valueSensor2, int* average_moisture)
 {
@@ -57,9 +35,27 @@ void Check_Soil_Moisture(int* valueSensor1, int* valueSensor2, int* average_mois
     Serial.println(*valueSensor2);
 };
 
-void Pump_Water()
+
+void Pump_Water(int PUMP_TIME_LIMIT)
 {
     digitalWrite(RELAY_PIN, HIGH);  // turn on water pump 
     delay(PUMP_TIME_LIMIT);         // leave pump on for one second
     digitalWrite(RELAY_PIN, LOW);   // turn off water pump
+};
+
+
+void Water_Until_Soil_Wet(int WET_THRESHOLD)
+{
+    while (need_to_water_soil)
+    {
+        Pump_Water(PUMP_TIME_LIMIT);
+        delay(SOIL_SATURATION_TIME); 
+        Check_Soil_Moisture(&valueSensor1, &valueSensor2, &average_moisture);
+
+        if (average_moisture >= WET_THRESHOLD)
+        {
+            need_to_water_soil = false;
+            break;
+        }
+    }
 };
